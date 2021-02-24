@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <!-- <p>{{ year }} - {{ month }} - {{ day }}</p> -->
+    <p>{{ formattedDate }}</p>
   </div>
 </template>
 
