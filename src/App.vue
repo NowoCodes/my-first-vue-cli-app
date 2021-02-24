@@ -1,30 +1,28 @@
 <template>
   <div id="app">
-    <CustomBanner>
-      <template v-slot:top>
-        <div>😀 It worked!</div>
-      </template>
-      <p>
-        <span>🏀</span>
-        This is the Login Banner
-        <span>🎾</span>
-      </p>
-      <template v-slot:bottom>
-        <div>🐶 Hurray!</div>
-      </template>
-    </CustomBanner>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <Hello />
+    <p>{{ formattedDate }}</p>
+    <button @click="incrementMonth">Increment Month</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import CustomBanner from "./components/CustomBanner.vue";
+import Hello from "./components/Hello.vue";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "app",
   components: {
-    CustomBanner,
+    Hello,
+  },
+  computed: {
+    ...mapGetters(['formattedDate']),
+  },
+  methods: {
+    ...mapActions(['incrementMonth'])
   },
 };
 </script>
